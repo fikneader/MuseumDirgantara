@@ -39,6 +39,7 @@ public class RoomActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Ruangan Museum");
 
         rvListRoom = findViewById(R.id.hasilcari);
         no_data = findViewById(R.id.txt_nodata);
@@ -86,7 +87,7 @@ public class RoomActivity extends AppCompatActivity {
     private void searchRoom(String wordSearch){
         roomList.clear();
         if (mDBHelper.getListRoom(wordSearch).isEmpty()){
-            Toast.makeText(this,"Data "+ wordSearch +" tidak ditemukan !",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this,"Data "+ wordSearch +" tidak ditemukan !",Toast.LENGTH_SHORT).show();
             no_data.setText("Data "+ wordSearch +" tidak ditemukan !");
             no_data.setVisibility(View.VISIBLE);
         } else {

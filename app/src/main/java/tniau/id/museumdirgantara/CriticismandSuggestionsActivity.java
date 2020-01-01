@@ -14,7 +14,7 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Kritik dan Saran");
+        getSupportActionBar().setTitle("Kritik dan Saran Museum");
 
 
     }

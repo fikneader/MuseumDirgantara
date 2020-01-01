@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "museumdirgantara.sqlite";
     public static final int DBVERSION = 1;
     public static final String DBLOCATION = "/data/data/"+ BuildConfig.APPLICATION_ID+"/databases/";
-    public static final String QUERY_LISTROOM = "Select * From ruangan Where nama_ruangan Like ? ORDER BY nama_ruangan ASC";
+    public static final String QUERY_LISTROOM = "Select * From ruangan Where nama_ruangan Like ? ORDER BY id_ruangan ASC";
     public static final String QUERY_LISTHISTORY = "Select * From sejarah Where judul_sejarah Like ? ORDER BY id ASC";
     private SQLiteDatabase mDatabase;
 
@@ -64,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = mDatabase.rawQuery(QUERY_LISTROOM,args);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
-            roomModel = new Room(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3), cursor.getString(4));
+            roomModel = new Room(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3));
             roomModelList.add(roomModel);
             cursor.moveToNext();
         }

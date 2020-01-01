@@ -35,11 +35,12 @@
                     android:id="@+id/nama_ruangan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:singleLine="true"
+                    android:maxLines="2"
+                    android:singleLine="false"
                     android:text="Nama Ruangan"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
 
                 <View
                     android:layout_width="@dimen/spacing_medium"

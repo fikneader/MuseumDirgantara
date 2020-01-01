@@ -14,7 +14,7 @@ public class ReservationActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Reservasi");
+        getSupportActionBar().setTitle("Reservasi Museum");
     }
 
     @Override

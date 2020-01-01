@@ -38,7 +38,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Sejarah Museum Dirgantara");
+        getSupportActionBar().setTitle("Sejarah Museum");
 
         rvListRoom = findViewById(R.id.hasilcari);
         no_data = findViewById(R.id.txt_nodata);

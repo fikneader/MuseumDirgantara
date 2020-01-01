@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.luseen.spacenavigation.SpaceItem;
@@ -91,4 +93,26 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 2000);
     }
+
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.threedot, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        // Handle item selection
+        switch (item.getItemId()) {
+
+            case R.id.tentang:
+                Intent intentTentang = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intentTentang);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

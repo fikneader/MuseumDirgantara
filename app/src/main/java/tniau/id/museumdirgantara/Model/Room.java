@@ -1,23 +1,15 @@
 package tniau.id.museumdirgantara.Model;
 
 public class Room {
-    String id,nama_ruangan,deskripsi_ruangan,gambar_ruangan,id_ruangan;
+    String nama_ruangan,deskripsi_ruangan,gambar_ruangan,id_ruangan;
 
-    public Room(String id, String nama_ruangan, String id_ruangan,String gambar_ruangan, String deskripsi_ruangan){
-        this.id = id;
-        this.nama_ruangan = nama_ruangan;
+    public Room(String id_ruangan, String nama_ruangan,String gambar_ruangan, String deskripsi_ruangan){
         this.id_ruangan = id_ruangan;
+        this.nama_ruangan = nama_ruangan;
         this.gambar_ruangan = gambar_ruangan;
         this.deskripsi_ruangan = deskripsi_ruangan;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
 
     public void setDeskripsi_ruangan(String deskripsi_ruangan) {
         this.deskripsi_ruangan = deskripsi_ruangan;
