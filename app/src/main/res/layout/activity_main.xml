@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/space"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_insetEdge="none" />
+
+    <com.luseen.spacenavigation.SpaceNavigationView
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/transparent"
+        android:foregroundGravity="bottom"
+        android:gravity="bottom"
+        app:centre_button_color="@color/blue_grey_50"
+        app:centre_button_icon="@drawable/logo_1"
+        app:space_background_color="@color/colorPrimary" />
+
+</RelativeLayout>
