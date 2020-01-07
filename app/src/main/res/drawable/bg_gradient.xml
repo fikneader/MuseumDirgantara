@@ -4,8 +4,8 @@
 
     <gradient
         android:angle="270"
-        android:centerColor="@color/overlay_dark_30"
-        android:endColor="@color/overlay_dark_40"
+        android:centerColor="@color/overlay_dark_50"
+        android:endColor="@color/overlay_dark_60"
         android:startColor="@android:color/transparent"
         android:type="linear" />
 

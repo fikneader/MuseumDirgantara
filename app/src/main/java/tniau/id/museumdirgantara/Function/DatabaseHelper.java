@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tniau.id.museumdirgantara.BuildConfig;
+import tniau.id.museumdirgantara.Model.ListRoom;
 import tniau.id.museumdirgantara.Model.Room;
 import tniau.id.museumdirgantara.Model.History;
 
@@ -20,9 +21,11 @@ import tniau.id.museumdirgantara.Model.History;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static Context mContext;
     public static final String DATABASE_NAME = "museumdirgantara.sqlite";
+    public static String idruangan;
     public static final int DBVERSION = 1;
     public static final String DBLOCATION = "/data/data/"+ BuildConfig.APPLICATION_ID+"/databases/";
     public static final String QUERY_LISTROOM = "Select * From ruangan Where nama_ruangan Like ? ORDER BY id_ruangan ASC";
+    public static final String QUERY_LISTROOMDETAIL = "Select * From daftar_ruangan Where nama_ruangan Like ? AND id_ruangan=";
     public static final String QUERY_LISTHISTORY = "Select * From sejarah Where judul_sejarah Like ? ORDER BY id ASC";
     private SQLiteDatabase mDatabase;
 
@@ -73,6 +76,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return roomModelList;
     }
 
+    public List<ListRoom> getListRoomDetail(String wordSearch, String idruanganku){
+        ListRoom listroomModel = null;
+        List<ListRoom> roomModelList = new ArrayList<>();
+        openDatabase();
+        String[] args = {"%" + wordSearch +"%"};
+
+        Cursor cursor = mDatabase.rawQuery(QUERY_LISTROOMDETAIL + idruanganku,args);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            listroomModel = new ListRoom(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3),cursor.getString(4));
+            roomModelList.add(listroomModel);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        closeDatabase();
+        return roomModelList;
+    }
+
     public List<History> getListHistory(String wordSearch){
         History historyModel = null;
         List<History> historyModelList = new ArrayList<>();
@@ -90,23 +111,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         closeDatabase();
         return historyModelList;
     }
-
-//    public List<DictionaryModel> getListWord2(String wordSearch){
-//        DictionaryModel dictionaryModel = null;
-//        List<DictionaryModel> dictionaryModelList = new ArrayList<>();
-//        openDatabase();
-//        String[] args = {"%" + wordSearch +"%"};
-//
-//        Cursor cursor = mDatabase.rawQuery(QUERY2,args);
-//        cursor.moveToFirst();
-//        while (!cursor.isAfterLast()){
-//            dictionaryModel = new DictionaryModel(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3), cursor.getString(4));
-//            dictionaryModelList.add(dictionaryModel);
-//            cursor.moveToNext();
-//        }
-//        cursor.close();
-//        closeDatabase();
-//        return dictionaryModelList;
-//    }
 
 }

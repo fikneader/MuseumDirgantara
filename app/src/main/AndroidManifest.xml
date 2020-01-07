@@ -19,7 +19,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutActivity"/>
+        <activity android:name=".ListRoomActivity"></activity>
+        <activity android:name=".AboutActivity" />
         <activity android:name=".DetailHistoryActivity" />
         <activity android:name=".HeroesActivity" />
         <activity android:name=".HistoryActivity" />
@@ -39,7 +40,6 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme"
             android:screenOrientation="portrait" />
     </application>
 

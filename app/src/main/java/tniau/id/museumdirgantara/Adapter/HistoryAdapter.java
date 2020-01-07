@@ -60,6 +60,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 intent.putExtra("judul",historyModel.getJudul_sejarah());
                 intent.putExtra("deskripsi",historyModel.getDeskripsi_sejarah());
                 intent.putExtra("gambar",historyModel.getGambar_sejarah());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });

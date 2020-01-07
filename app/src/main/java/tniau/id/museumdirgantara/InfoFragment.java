@@ -22,29 +22,35 @@ import android.widget.TextView;
 
 public class InfoFragment extends Fragment {
 
-    private static final int MAX_STEP = 4;
+    private static final int MAX_STEP = 6;
 
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
     private Button btnNext;
     private String about_title_array[] = {
-            "Ready to Travel",
-            "Pick the Ticket",
-            "Flight to Destination",
-            "Enjoy Holiday"
+            "Menu Berita",
+            "Menu Sejarah",
+            "Menu Pahlawan",
+            "Menu Ruangan",
+            "Menu Reservasi",
+            "Menu Kritik dan Saran"
     };
     private String about_description_array[] = {
-            "Choose your destination, plan Your trip. Pick the best place for Your holiday",
-            "Select the day, pick Your ticket. We give you the best prices. We guarantee!",
-            "Safe and Comfort flight is our priority. Professional crew and services.",
-            "Enjoy your holiday, Dont forget to feel the moment and take a photo!",
+            "Lihat berita terbaru tentang Museum Dirgantara dan ketahui informasi yang menarik dari halaman facebook Museum Dirgantara Mandala",
+            "Ketahui bagaimana Museum Dirgantara Mandala dapat berdiri hingga saat ini dan sejarah penting mengenai Museum Dirgantara Mandala",
+            "Berisi informasi menarik daftar nama - nama pahlawan dan tokoh - tokoh pengharum TNI AU",
+            "Jelajahi setiap ruangan yang ada di Museum Dirgantara Mandala dan dapatkan wawasan dari koleksi - koleksi menarik Museum Dirgantara Mandala",
+            "Nggak perlu repot lagi dan lebih mudah mengunjungi Museum Dirgantara Mandala dengan Menu Reservasi",
+            "Demi melayani dengan kenyamanan kami sangat mengapresiasi kritikan dan masukan untuk Museum Dirgantara Mandala"
     };
     private int about_images_array[] = {
-            R.drawable.banner1,
-            R.drawable.banner2,
-            R.drawable.banner3,
-            R.drawable.banner4
+            R.drawable.berita,
+            R.drawable.sejarah,
+            R.drawable.pahlawan,
+            R.drawable.ruangan,
+            R.drawable.reservasi,
+            R.drawable.kritiksaran
     };
 
     @Override
@@ -88,8 +94,8 @@ public class InfoFragment extends Fragment {
             }
         });
 
-        Tools.setSystemBarColor(getActivity(), R.color.grey_5);
-        Tools.setSystemBarLight(getActivity());
+//        Tools.setSystemBarColor(getActivity(), R.color.colorPrimary);
+//        Tools.setSystemBarLight(getActivity());
 
 
         return  view;

@@ -3,10 +3,12 @@ package tniau.id.museumdirgantara;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import tniau.id.museumdirgantara.Function.Tools;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         fm.beginTransaction().add(R.id.frame_container, fragmentInfo, "2").hide(fragmentInfo).commit();
         fm.beginTransaction().add(R.id.frame_container,fragmentHome, "1").commit();
+
+//        Tools.setSystemBarColor(MainActivity.this, R.color.colorPrimary);
+//        Tools.setSystemBarLight(MainActivity.this);
 
         //Bottom Nav Bar
         SpaceNavigationView spaceNavigationView = (SpaceNavigationView) findViewById(R.id.space);
