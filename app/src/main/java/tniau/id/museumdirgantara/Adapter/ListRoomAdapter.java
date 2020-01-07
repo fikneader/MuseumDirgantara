@@ -1,18 +1,22 @@
 package tniau.id.museumdirgantara.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
+import tniau.id.museumdirgantara.DetailRoomActivity;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
+import tniau.id.museumdirgantara.ListRoomActivity;
 import tniau.id.museumdirgantara.Model.ListRoom;
 import tniau.id.museumdirgantara.R;
 
@@ -38,15 +42,29 @@ public class ListRoomAdapter extends RecyclerView.Adapter<ListRoomAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(ListRoomAdapter.ViewHolder holder, int position) {
-        ListRoom roomDetailModel = data.get(position);
+        final ListRoom roomDetailModel = data.get(position);
         holder.namaRuangan.setText(roomDetailModel.getNama_ruangan());
-        holder.deskripsiRuangan.setText(roomDetailModel.getDeskripsi_ruangan());
+        String deskripsinew = roomDetailModel.getDeskripsi_ruangan().replace("/n", " ");
+        holder.deskripsiRuangan.setText(deskripsinew);
 //
         Resources res = context.getResources();
         String mDrawableName = roomDetailModel.getGambar_ruangan();
         int resourceId = res.getIdentifier(mDrawableName , "drawable", context.getPackageName());
         Drawable drawable = res.getDrawable(resourceId);
         holder.gambarRuangan.setImageDrawable(drawable );
+
+        holder.itemRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailRoomActivity.class);
+                intent.putExtra("id",roomDetailModel.getId_ruangan());
+                intent.putExtra("nama",roomDetailModel.getNama_ruangan());
+                intent.putExtra("deskripsi",roomDetailModel.getDeskripsi_ruangan());
+                intent.putExtra("gambar",roomDetailModel.getGambar_ruangan());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -57,6 +75,7 @@ public class ListRoomAdapter extends RecyclerView.Adapter<ListRoomAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public Context context;
+        public RelativeLayout itemRoom;
         public TextView namaRuangan,deskripsiRuangan;
         public ImageView gambarRuangan;
         public ViewHolder(View itemView, final Context context) {
@@ -65,6 +84,7 @@ public class ListRoomAdapter extends RecyclerView.Adapter<ListRoomAdapter.ViewHo
             namaRuangan = itemView.findViewById(R.id.nama_ruangan);
             deskripsiRuangan = itemView.findViewById(R.id.deskripsi_ruangan);
             gambarRuangan = itemView.findViewById(R.id.gambar_ruangan);
+            itemRoom = itemView.findViewById(R.id.item_room);
 
             final DatabaseHelper db = new DatabaseHelper(context);
             db.openDatabase();

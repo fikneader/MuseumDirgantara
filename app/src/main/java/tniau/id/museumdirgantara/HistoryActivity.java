@@ -85,7 +85,6 @@ public class HistoryActivity extends AppCompatActivity {
     private void searchSejarah(String wordSearch){
         historyList.clear();
         if (mDBHelper.getListHistory(wordSearch).isEmpty()){
-//            Toast.makeText(this,"Data "+ wordSearch +" tidak ditemukan !",Toast.LENGTH_SHORT).show();
             no_data.setText("Data "+ wordSearch +" tidak ditemukan !");
             no_data.setVisibility(View.VISIBLE);
         } else {
