@@ -1,12 +1,15 @@
 package tniau.id.museumdirgantara;
 
 import androidx.appcompat.app.AppCompatActivity;
+import tniau.id.museumdirgantara.sendmail.GMailSender;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -48,7 +51,8 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
                     txt_kritikdansaran.requestFocus();
                     return;
                 } else {
-                    Toast.makeText(CriticismandSuggestionsActivity.this, "Kirim", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(CriticismandSuggestionsActivity.this, "Kirim", Toast.LENGTH_SHORT).show();
+                    sendMessage(txt_kritikdansaran.getText().toString().trim(),txt_nama.getText().toString().trim());
                 }
             }
         });
@@ -75,6 +79,33 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void sendMessage(final String pesan, final String nama) {
+        final ProgressDialog dialog = new ProgressDialog(CriticismandSuggestionsActivity.this);
+        dialog.setTitle("Mengirim");
+        dialog.setMessage("Mohon tunggu sebentar");
+        dialog.show();
+        Thread sender = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    GMailSender sender = new GMailSender("fikneader@gmail.com", "stembayo13");
+                    sender.sendMail("Kritik dan Saran Museum Dirgantara Mandala - " + nama,
+                            pesan,
+                            "fikneader@gmail.com",
+                            "chiva.olivia@gmail.com");
+                    dialog.dismiss();
+                } catch (Exception e) {
+//                    Toast.makeText(CriticismandSuggestionsActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.e("mylog", "Error: " + e.getMessage());
+                }
+            }
+        });
+        sender.start();
+        txt_nama.getText().clear();
+        txt_kritikdansaran.getText().clear();
+        txt_nama.requestFocus();
     }
 
     public static void getOpenFacebookIntent(Context context) {
