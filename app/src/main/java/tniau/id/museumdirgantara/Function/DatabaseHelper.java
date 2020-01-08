@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tniau.id.museumdirgantara.BuildConfig;
+import tniau.id.museumdirgantara.Model.Heroes;
 import tniau.id.museumdirgantara.Model.ListRoom;
 import tniau.id.museumdirgantara.Model.Room;
 import tniau.id.museumdirgantara.Model.History;
@@ -27,6 +28,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String QUERY_LISTROOM = "Select * From ruangan Where nama_ruangan Like ? ORDER BY id_ruangan ASC";
     public static final String QUERY_LISTROOMDETAIL = "Select * From daftar_ruangan Where nama_ruangan Like ? AND id_ruangan=";
     public static final String QUERY_LISTHISTORY = "Select * From sejarah Where judul_sejarah Like ? ORDER BY id ASC";
+    public static final String QUERY_LISTHEROES = "Select * From pahlawan Where nama_pahlawan Like ? ORDER BY id ASC";
     private SQLiteDatabase mDatabase;
 
     public DatabaseHelper(Context context) {
@@ -110,6 +112,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         closeDatabase();
         return historyModelList;
+    }
+
+    public List<Heroes> getListHeroes(String wordSearch){
+        Heroes heroesModel = null;
+        List<Heroes> heroesModelList = new ArrayList<>();
+        openDatabase();
+        String[] args = {"%" + wordSearch +"%"};
+
+        Cursor cursor = mDatabase.rawQuery(QUERY_LISTHEROES,args);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()){
+            heroesModel = new Heroes(cursor.getString(0),cursor.getString(1),cursor.getString(2), cursor.getString(3));
+            heroesModelList.add(heroesModel);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        closeDatabase();
+        return heroesModelList;
     }
 
 }

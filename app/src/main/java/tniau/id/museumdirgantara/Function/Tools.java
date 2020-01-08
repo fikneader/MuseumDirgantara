@@ -21,6 +21,20 @@ import tniau.id.museumdirgantara.R;
 
 public class Tools {
 
+    public static void displayImageRound(final Context ctx, final ImageView img, @DrawableRes int drawable) {
+        try {
+            Glide.with(ctx).asBitmap().load(drawable).centerCrop().into(new BitmapImageViewTarget(img) {
+                @Override
+                protected void setResource(Bitmap resource) {
+                    RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(ctx.getResources(), resource);
+                    circularBitmapDrawable.setCircular(true);
+                    img.setImageDrawable(circularBitmapDrawable);
+                }
+            });
+        } catch (Exception e) {
+        }
+    }
+
     public static void displayImageOriginal(Context ctx, ImageView img, @DrawableRes int drawable) {
         try {
             Glide.with(ctx).load(drawable)
