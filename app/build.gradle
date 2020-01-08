@@ -1,5 +1,16 @@
 apply plugin: 'com.android.application'
 
+//Add these lines
+def email = '"' + email + '"' ?: '"email"'
+def password = '"' + password + '"' ?: '"password"'
+def recipients = '"' + recipients + '"' ?: '"recipients"'
+
+android.buildTypes.each { type ->
+    type.buildConfigField 'String', 'email', email
+    type.buildConfigField 'String', 'password', password
+    type.buildConfigField 'String', 'recipients', recipients
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {

@@ -90,11 +90,11 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    GMailSender sender = new GMailSender("fikneader@gmail.com", "stembayo13");
+                    GMailSender sender = new GMailSender(BuildConfig.email, BuildConfig.password);
                     sender.sendMail("Kritik dan Saran Museum Dirgantara Mandala - " + nama,
                             pesan,
-                            "fikneader@gmail.com",
-                            "chiva.olivia@gmail.com");
+                            BuildConfig.email,
+                            BuildConfig.recipients);
                     dialog.dismiss();
                 } catch (Exception e) {
 //                    Toast.makeText(CriticismandSuggestionsActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
