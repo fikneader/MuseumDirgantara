@@ -1,8 +1,11 @@
 package tniau.id.museumdirgantara;
 
 import androidx.appcompat.app.AppCompatActivity;
+import tniau.id.museumdirgantara.sendmail.GMailSender;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -60,10 +63,42 @@ public class ReservationActivity extends AppCompatActivity {
                     return;
                 }
                 else {
-                    Toast.makeText(ReservationActivity.this, "Kirim", Toast.LENGTH_SHORT).show();
+                    sendMessage(txt_nama.getText().toString(),txt_notelp.getText().toString(),txt_alamat.getText().toString(),
+                            txt_jumlahrombongan.getText().toString(),txt_tanggal.getText().toString(),txt_kegiatan.getText().toString());
                 }
             }
         });
+    }
+
+    private void sendMessage(final String nama, final String notelp, final String alamat, final String jumlahrombongan, final String tanggal, final String kegiatan) {
+        final ProgressDialog dialog = new ProgressDialog(ReservationActivity.this);
+        dialog.setTitle("Mengirim");
+        dialog.setMessage("Mohon tunggu sebentar");
+        dialog.show();
+        final String pesan = "Nama saya " + nama + " ingin reservasi pada tanggal " + tanggal + " untuk kegiatan " + kegiatan;
+        Thread sender = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    GMailSender sender = new GMailSender(BuildConfig.email, BuildConfig.password);
+                    sender.sendMail("Reservasi Museum Dirgantara Mandala - " + nama,
+                            pesan,
+                            BuildConfig.email,
+                            BuildConfig.recipients);
+                    dialog.dismiss();
+                } catch (Exception e) {
+                    Log.e("mylog", "Error: " + e.getMessage());
+                }
+            }
+        });
+        sender.start();
+        txt_nama.getText().clear();
+        txt_notelp.getText().clear();
+        txt_alamat.getText().clear();
+        txt_jumlahrombongan.getText().clear();
+        txt_tanggal.getText().clear();
+        txt_kegiatan.getText().clear();
+        txt_nama.requestFocus();
     }
 
     @Override
