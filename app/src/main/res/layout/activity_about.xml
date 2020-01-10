@@ -150,12 +150,23 @@
 
             <View
                 android:layout_width="0dp"
-                android:layout_height="@dimen/spacing_medium" />
+                android:layout_height="@dimen/spacing_large" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Museum Dirgantara Mandala"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/grey_90" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="3dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TNI Angkatan Udara"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/grey_90" />
 
