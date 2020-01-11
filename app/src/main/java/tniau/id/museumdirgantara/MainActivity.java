@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent callIntent = new Intent(Intent.ACTION_CALL); //use ACTION_CALL class
-                callIntent.setData(Uri.parse("tel:0895371393492"));    //this is the phone number calling
+                callIntent.setData(Uri.parse("tel:0274484453"));    //this is the phone number calling
                 if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     //request permission from user if the app hasn't got the required permission
                     ActivityCompat.requestPermissions(MainActivity.this,

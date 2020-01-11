@@ -72,6 +72,29 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:foregroundTint="@color/colorPrimaryDark"
+                        android:inputType="phone"
+                        android:textColor="@android:color/background_dark"
+                        android:textColorHint="@color/colorPrimaryDark"
+                        android:textColorLink="@color/colorPrimaryDark"
+                        android:theme="@style/EditText.Yellow" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/colorPrimaryDark"
+                    android:foregroundTint="@color/colorPrimaryDark"
+                    android:hint="Email"
+                    android:textColorHint="@color/grey_40">
+
+                    <EditText
+                        android:id="@+id/txt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:foregroundTint="@color/colorPrimaryDark"
+                        android:inputType="textEmailAddress"
                         android:textColor="@android:color/background_dark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textColorLink="@color/colorPrimaryDark"
@@ -114,6 +137,7 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:foregroundTint="@color/colorPrimaryDark"
+                        android:inputType="number"
                         android:textColor="@android:color/background_dark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textColorLink="@color/colorPrimaryDark"
@@ -135,6 +159,7 @@
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/colorPrimaryDark"
                         android:foregroundTint="@color/colorPrimaryDark"
+                        android:inputType="date"
                         android:textColor="@android:color/background_dark"
                         android:textColorHint="@color/colorPrimaryDark"
                         android:textColorLink="@color/colorPrimaryDark"
