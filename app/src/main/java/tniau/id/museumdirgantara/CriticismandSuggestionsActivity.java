@@ -1,17 +1,23 @@
 package tniau.id.museumdirgantara;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
 import tniau.id.museumdirgantara.sendmail.GMailSender;
 
+import android.Manifest;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -51,7 +57,6 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
                     txt_kritikdansaran.requestFocus();
                     return;
                 } else {
-//                    Toast.makeText(CriticismandSuggestionsActivity.this, "Kirim", Toast.LENGTH_SHORT).show();
                     sendMessage(txt_kritikdansaran.getText().toString().trim(),txt_nama.getText().toString().trim());
                 }
             }
@@ -86,20 +91,21 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
         dialog.setTitle("Mengirim");
         dialog.setMessage("Mohon tunggu sebentar");
         dialog.show();
-        Thread sender = new Thread(new Runnable() {
+        final Thread sender = new Thread(new Runnable() {
             @Override
             public void run() {
+
                 try {
                     GMailSender sender = new GMailSender(BuildConfig.email, BuildConfig.password);
-                    sender.sendMail("Kritik dan Saran Museum Dirgantara Mandala - " + nama,
+                    sender.sendMail(CriticismandSuggestionsActivity.this,"Kritik dan Saran Museum Dirgantara Mandala - " + nama,
                             pesan,
                             BuildConfig.email,
                             BuildConfig.recipients);
                     dialog.dismiss();
                 } catch (Exception e) {
-//                    Toast.makeText(CriticismandSuggestionsActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     Log.e("mylog", "Error: " + e.getMessage());
                 }
+
             }
         });
         sender.start();
