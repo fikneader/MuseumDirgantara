@@ -22,8 +22,9 @@
         android:background="@android:color/transparent"
         android:foregroundGravity="bottom"
         android:gravity="bottom"
+        android:backgroundTint="@color/colorPrimary"
         app:centre_button_color="@color/blue_grey_50"
-        app:centre_button_icon="@drawable/logo_1"
+        app:centre_button_icon="@drawable/ic_phone_in_talk_black_24dp"
         app:space_background_color="@color/colorPrimary" />
 
 </RelativeLayout>
