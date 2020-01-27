@@ -114,7 +114,7 @@ public class ReservationActivity extends AppCompatActivity {
             public void run() {
                 try {
                     GMailSender sender = new GMailSender(BuildConfig.email, BuildConfig.password);
-                    sender.sendMail(getApplicationContext(),"#Reservasi Museum Dirgantara Mandala - " + nama,
+                    sender.sendMail(ReservationActivity.this,"#Reservasi Museum Dirgantara Mandala - " + nama,
                             pesan,
                             BuildConfig.email,
                             BuildConfig.recipients);

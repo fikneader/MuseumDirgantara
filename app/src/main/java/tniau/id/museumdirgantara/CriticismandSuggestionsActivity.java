@@ -91,7 +91,7 @@ public class CriticismandSuggestionsActivity extends AppCompatActivity {
             public void run() {
                 try {
                     GMailSender sender = new GMailSender(BuildConfig.email, BuildConfig.password);
-                    sender.sendMail(getApplicationContext(),"#Kritik dan Saran Museum Dirgantara Mandala - " + nama,
+                    sender.sendMail(CriticismandSuggestionsActivity.this,"#Kritik dan Saran Museum Dirgantara Mandala - " + nama,
                             pesan,
                             BuildConfig.email,
                             BuildConfig.recipients);
