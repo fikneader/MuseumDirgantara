@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/white"
     android:fitsSystemWindows="true"
-    tools:context=".SplashScreenActivity">
+    tools:context=".Activity.SplashScreenActivity">
 
     <LinearLayout
         android:id="@+id/lin1"

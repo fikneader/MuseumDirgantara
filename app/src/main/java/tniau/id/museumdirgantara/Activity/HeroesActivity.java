@@ -1,4 +1,4 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import tniau.id.museumdirgantara.Adapter.HeroesAdapter;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
 import tniau.id.museumdirgantara.Model.Heroes;
+import tniau.id.museumdirgantara.R;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -85,7 +86,7 @@ public class HeroesActivity extends AppCompatActivity {
 
     private void searchPahlawan(String wordSearch){
         heroesList.clear();
-        if (mDBHelper.getListHistory(wordSearch).isEmpty()){
+        if (mDBHelper.getListHeroes(wordSearch).isEmpty()){
             no_data.setText("Data "+ wordSearch +" tidak ditemukan !");
             no_data.setVisibility(View.VISIBLE);
         } else {

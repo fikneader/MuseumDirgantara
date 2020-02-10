@@ -10,12 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
-import tniau.id.museumdirgantara.DetailHeroesActivity;
+import tniau.id.museumdirgantara.Activity.DetailHeroesActivity;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
 import tniau.id.museumdirgantara.Function.Tools;
 import tniau.id.museumdirgantara.Model.Heroes;

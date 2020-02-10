@@ -1,18 +1,24 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Fragment;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import tniau.id.museumdirgantara.Activity.AboutActivity;
+import tniau.id.museumdirgantara.Activity.CriticismandSuggestionsActivity;
+import tniau.id.museumdirgantara.Activity.HeroesActivity;
+import tniau.id.museumdirgantara.Activity.HistoryActivity;
 import tniau.id.museumdirgantara.Function.Tools;
 import tniau.id.museumdirgantara.Model.Image;
+import tniau.id.museumdirgantara.Activity.NewsActivity;
+import tniau.id.museumdirgantara.R;
+import tniau.id.museumdirgantara.Activity.ReservationActivity;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -21,8 +27,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.balysv.materialripple.MaterialRippleLayout;
 
@@ -89,7 +93,7 @@ public class HomeFragment extends Fragment {
         menu_ruangan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), RoomActivity.class);
+                Intent intent = new Intent(getActivity(), AboutActivity.RoomActivity.class);
                 startActivity(intent);
             }
         });

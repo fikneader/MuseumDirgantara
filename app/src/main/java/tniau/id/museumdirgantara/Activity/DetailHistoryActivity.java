@@ -1,6 +1,7 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import tniau.id.museumdirgantara.R;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -10,46 +11,48 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailHeroesActivity extends AppCompatActivity {
+public class DetailHistoryActivity extends AppCompatActivity {
 
     Bundle extras;
-    String nama,deskripsi,gambar;
+    String judul,deskripsi,gambar;
 
-    TextView txt_nama,txt_deskripsi;
+    TextView txt_judul,txt_deskripsi;
     ImageView img_gambar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_heroes);
+        setContentView(R.layout.activity_detail_history);
 
         extras = getIntent().getExtras();
         Intent intentku = getIntent();
 
-        nama = extras.getString("nama");
+        judul = extras.getString("judul");
         deskripsi = extras.getString("deskripsi");
         gambar = extras.getString("gambar");
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle(nama);
+        getSupportActionBar().setTitle(judul);
 
-        txt_nama = findViewById(R.id.nama_pahlawan);
-        txt_deskripsi = findViewById(R.id.deskripsi_pahlawan);
-        img_gambar = findViewById(R.id.gambar_pahlawan);
+        txt_judul = findViewById(R.id.judul_sejarah);
+        txt_deskripsi = findViewById(R.id.deskripsi_sejarah);
+        img_gambar = findViewById(R.id.gambar_sejarah);
 
         if (deskripsi!=null){
             String deskripsinew = deskripsi.replace("/n", System.getProperty("line.separator"));
             txt_deskripsi.setText(deskripsinew);
         }
 
-        txt_nama.setText(nama);
+        txt_judul.setText(judul);
 
         Resources res = getApplicationContext().getResources();
         String mDrawableName = gambar;
         int resourceId = res.getIdentifier(mDrawableName , "drawable", getApplicationContext().getPackageName());
         Drawable drawable = res.getDrawable(resourceId);
         img_gambar.setImageDrawable(drawable );
+
     }
 
     @Override

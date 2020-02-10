@@ -1,7 +1,8 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
+import tniau.id.museumdirgantara.R;
 
 import android.content.Context;
 import android.content.Intent;

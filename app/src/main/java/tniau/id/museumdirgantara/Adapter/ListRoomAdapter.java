@@ -14,9 +14,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
-import tniau.id.museumdirgantara.DetailRoomActivity;
+import tniau.id.museumdirgantara.Activity.DetailRoomActivity;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
-import tniau.id.museumdirgantara.ListRoomActivity;
 import tniau.id.museumdirgantara.Model.ListRoom;
 import tniau.id.museumdirgantara.R;
 

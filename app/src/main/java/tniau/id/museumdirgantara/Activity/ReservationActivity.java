@@ -1,9 +1,11 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
+import tniau.id.museumdirgantara.BuildConfig;
+import tniau.id.museumdirgantara.R;
 import tniau.id.museumdirgantara.sendmail.GMailSender;
 
 import android.Manifest;

@@ -14,10 +14,9 @@ import android.widget.TextView;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
-import tniau.id.museumdirgantara.DetailHistoryActivity;
+import tniau.id.museumdirgantara.Activity.DetailHistoryActivity;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
 import tniau.id.museumdirgantara.Model.History;
-import tniau.id.museumdirgantara.NewsActivity;
 import tniau.id.museumdirgantara.R;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder>{

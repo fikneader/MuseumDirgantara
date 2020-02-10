@@ -1,6 +1,7 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import tniau.id.museumdirgantara.R;
 
 import android.content.Intent;
 import android.content.res.Resources;

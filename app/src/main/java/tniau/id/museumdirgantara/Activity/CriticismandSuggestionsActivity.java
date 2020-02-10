@@ -1,12 +1,13 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import tniau.id.museumdirgantara.BuildConfig;
+import tniau.id.museumdirgantara.R;
 import tniau.id.museumdirgantara.sendmail.GMailSender;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class CriticismandSuggestionsActivity extends AppCompatActivity {
 

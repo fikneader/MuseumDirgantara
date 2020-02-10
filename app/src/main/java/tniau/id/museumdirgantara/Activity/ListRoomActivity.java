@@ -1,4 +1,4 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -9,6 +9,7 @@ import tniau.id.museumdirgantara.Adapter.ListRoomAdapter;
 import tniau.id.museumdirgantara.Adapter.RoomAdapter;
 import tniau.id.museumdirgantara.Function.DatabaseHelper;
 import tniau.id.museumdirgantara.Model.ListRoom;
+import tniau.id.museumdirgantara.R;
 
 import android.content.Context;
 import android.content.Intent;

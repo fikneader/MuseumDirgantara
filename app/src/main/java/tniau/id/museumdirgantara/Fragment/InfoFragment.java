@@ -1,4 +1,4 @@
-package tniau.id.museumdirgantara;
+package tniau.id.museumdirgantara.Fragment;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import tniau.id.museumdirgantara.Function.Tools;
+import tniau.id.museumdirgantara.R;
 
 import android.view.LayoutInflater;
 import android.view.View;
