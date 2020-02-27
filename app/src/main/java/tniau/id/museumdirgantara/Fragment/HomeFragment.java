@@ -10,10 +10,10 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import tniau.id.museumdirgantara.Activity.AboutActivity;
 import tniau.id.museumdirgantara.Activity.CriticismandSuggestionsActivity;
 import tniau.id.museumdirgantara.Activity.HeroesActivity;
 import tniau.id.museumdirgantara.Activity.HistoryActivity;
+import tniau.id.museumdirgantara.Activity.RoomActivity;
 import tniau.id.museumdirgantara.Function.Tools;
 import tniau.id.museumdirgantara.Model.Image;
 import tniau.id.museumdirgantara.Activity.NewsActivity;
@@ -93,7 +93,7 @@ public class HomeFragment extends Fragment {
         menu_ruangan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), AboutActivity.RoomActivity.class);
+                Intent intent = new Intent(getActivity(), RoomActivity.class);
                 startActivity(intent);
             }
         });

@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.DetailHeroesActivity"></activity>
+        <activity android:name=".Activity.DetailHeroesActivity"/>
         <activity android:name=".Activity.DetailRoomActivity" />
         <activity android:name=".Activity.ListRoomActivity" />
         <activity android:name=".Activity.AboutActivity" />
@@ -31,10 +31,10 @@
         <activity android:name=".Activity.CriticismandSuggestionsActivity" />
         <activity android:name=".Activity.ReservationActivity" />
         <activity android:name=".Activity.NewsActivity" />
-        <activity android:name=".Activity.AboutActivity$RoomActivity" />
+        <activity android:name=".Activity.RoomActivity" />
         <activity
             android:name=".Activity.SplashScreenActivity"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppThemeSplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
         </activity>
         <activity
             android:name=".Activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>
